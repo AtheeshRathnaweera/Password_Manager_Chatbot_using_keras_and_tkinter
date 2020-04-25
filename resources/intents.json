@@ -1,0 +1,28 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi there!","How are you?","Whats up","Hello","Hey","Is anyone there?"],
+      "responses": ["Hi there, how can i help you?","Hey good to see you again!","Hello !"],
+      "context": [""]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye","See you later","Nice to chatting to you, Bye","Have to go!","cu later","Good bye"],
+      "responses": ["Bye! Have a nice day.","See you soon ! Bye."],
+      "context": [""]
+    },
+    {
+      "tag": "whatcando",
+      "patterns": ["What can you do?","What are you?"],
+      "responses": ["I am Amigo! I am here for help you! I can remember your passwords !"],
+      "context": [""]
+    },
+    {
+      "tag": "thankyou",
+      "patterns": ["Thanks","Thank you!","Thanks for helping me!"],
+      "responses": ["Any time","You are welcome!","Happy to help you!"],
+      "context": [""]
+    }
+  ]
+}
