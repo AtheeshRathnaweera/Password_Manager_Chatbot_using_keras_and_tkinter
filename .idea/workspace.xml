@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3cd8d43-c92c-4edf-b3bb-39c732102e81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/chatbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chatbot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/chatbot_model.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/create_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/create_gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/prepocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/prepocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/chatbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/prepocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/prepocessor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/prepocessing.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/create_gui.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -60,7 +65,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prepocessing" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="create_gui" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="chatbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -72,7 +77,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/prepocessing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/create_gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,33 +98,53 @@
       <option name="presentableId" value="Default" />
       <updated>1587799888665</updated>
     </task>
+    <task id="LOCAL-00001" summary="updated">
+      <created>1587885017121</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587885017121</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587882574062">
+    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587896269019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587882574062" />
-    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1587882571820">
+    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587896269019" />
+    <state x="498" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587894286152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587882571820" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1587884972201">
+    <state x="498" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1587894286152" />
+    <state x="424" y="7" key="CommitChangelistDialog2" timestamp="1587885015940">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587884972201" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1587884972201">
+    <state x="424" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587885015940" />
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1587896266154">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587884972201" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1587884972201">
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587896266154" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1587896745937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587884972201" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1587884972201">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587896745937" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1587896745932">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587884972201" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587896745932" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1587896745932">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587896745932" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1587896745932">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587896745932" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1587812768399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

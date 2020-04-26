@@ -14,6 +14,7 @@ import os
 class create_model:
     words_library = []
     tags = []
+    responses = []
     ignore_words = ["?", "!", ","]
 
     doc_x = []
@@ -22,7 +23,6 @@ class create_model:
     def __init__(self):
         self.__readTheIntents()
         self.__preProcessTestAndTrainData()
-
         self.modelCreation()
 
     def __readTheIntents(self):
@@ -60,6 +60,18 @@ class create_model:
         with open(path + "\classnames.pkl", 'wb') as f:
             pickle.dump(self.tags, f)
 
+        self.__save_the_response_to_a_file(intents_json, path)
+
+    def __save_the_response_to_a_file(self, json_intents, path):
+        temp_responses = [None] * len(self.tags)  # list of numpy arrays
+
+        for intent in json_intents['intents']:
+            index = self.tags.index(intent['tag'])
+            temp_responses[index] = np.array(intent['responses'])
+
+        temp_responses = np.array(temp_responses)
+        np.save(path + '/responses.npy', temp_responses)  # save the temp_responses
+
     def __preProcessTestAndTrainData(self):
         processed_x = []
         for pattern in self.doc_x:
@@ -93,6 +105,7 @@ class create_model:
         self.doc_y = processed_y
 
     def modelCreation(self):
+
         training_x = np.array(self.doc_x)
         training_y = np.array(self.doc_y)
 
@@ -112,7 +125,8 @@ class create_model:
 
         # fitting and saving the model
         hist = model.fit(training_x, training_y, epochs=200, batch_size=5, verbose=1)
-        model.save(os.getcwd()[:-4] + "generated" + '\chatbot_model.h5', hist)
+        # model.save(os.getcwd()[:-4] + "generated" + '\chatbot_model.h5', hist)
+        model.save(os.getcwd()[:-4] + "generated/" + 'saved_model/')
 
 
 create_model()
