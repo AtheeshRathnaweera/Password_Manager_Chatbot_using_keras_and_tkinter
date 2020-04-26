@@ -1,3 +1,4 @@
+import json
 import pickle
 import os
 import nltk
@@ -16,8 +17,17 @@ class Preprocessor:
         return pickle.load(open(os.getcwd()[:-4] + "generated" + '\classnames.pkl', 'rb'))
 
     @staticmethod
-    def get_the_responses():
-        return np.load(os.getcwd()[:-4] + "generated/"+'responses.npy', allow_pickle=True)
+    def get_the_entities():
+        return pickle.load(open(os.getcwd()[:-4] + "generated" + '\entities.pkl', 'rb'))
+
+    @staticmethod
+    def get_the_intents():
+        intent_file = open(os.getcwd()[:-4]+"/resources/intents.json").read()
+        return json.loads(intent_file)
+
+    @staticmethod
+    def tokenize_a_sentence(sentence):
+        return nltk.word_tokenize(sentence)
 
     @staticmethod
     def processing(words_dict, received_sentence):

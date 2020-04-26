@@ -7,14 +7,14 @@ import pickle
 
 import numpy as np
 from tensorflow import keras
-
 import os
 
 
 class create_model:
     words_library = []
     tags = []
-    responses = []
+    # responses = []
+    entities = []
     ignore_words = ["?", "!", ","]
 
     doc_x = []
@@ -40,6 +40,10 @@ class create_model:
                 self.doc_x.append(words_in_pattern)
                 self.doc_y.append(tag_name)
 
+            if intent['Entity'] != "":
+                print("found an entity ", intent['Entity'])
+                self.entities.append(np.array([intent['Entity'], '']))
+
         stemmed_words_library = []
         for word in self.words_library:
             if word not in self.ignore_words:
@@ -47,10 +51,11 @@ class create_model:
 
         self.words_library = stemmed_words_library
 
-        print(len(self.words_library))
+        print("normal words amount", len(self.words_library))
         self.words_library = sorted(list(set(self.words_library)))
         self.tags = sorted(self.tags)
         print("stemmed words library amount : ", len(self.words_library))
+        self.entities = np.array(self.entities)
 
         path = os.getcwd()[:-4] + "generated"
 
@@ -60,17 +65,18 @@ class create_model:
         with open(path + "\classnames.pkl", 'wb') as f:
             pickle.dump(self.tags, f)
 
-        self.__save_the_response_to_a_file(intents_json, path)
+        with open(path + "\entities.pkl", 'wb') as f:
+            pickle.dump(self.entities, f)
 
-    def __save_the_response_to_a_file(self, json_intents, path):
-        temp_responses = [None] * len(self.tags)  # list of numpy arrays
-
-        for intent in json_intents['intents']:
-            index = self.tags.index(intent['tag'])
-            temp_responses[index] = np.array(intent['responses'])
-
-        temp_responses = np.array(temp_responses)
-        np.save(path + '/responses.npy', temp_responses)  # save the temp_responses
+    # def __save_the_response_to_a_file(self, json_intents, path):
+    #     temp_responses = [None] * len(self.tags)  # list of numpy arrays
+    #
+    #     for intent in json_intents['intents']:
+    #         index = self.tags.index(intent['tag'])
+    #         temp_responses[index] = np.array(intent['responses'])
+    #
+    #     temp_responses = np.array(temp_responses)
+    #     np.save(path + '/responses.npy', temp_responses)  # save the temp_responses
 
     def __preProcessTestAndTrainData(self):
         processed_x = []
