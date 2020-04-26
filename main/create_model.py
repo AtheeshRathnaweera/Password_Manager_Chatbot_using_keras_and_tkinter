@@ -23,9 +23,6 @@ class create_model:
         self.__readTheIntents()
         self.__preProcessTestAndTrainData()
 
-        print(self.doc_x)
-        print(self.doc_y)
-
         self.modelCreation()
 
     def __readTheIntents(self):
