@@ -1,3 +1,4 @@
-*.pkl
-*.npy
-generated/saved_model/
+generated/*
+
+# exception to the rule
+!generated/.gitkeep
