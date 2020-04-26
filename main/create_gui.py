@@ -22,7 +22,6 @@ class create_gui:
         self.__create()
 
     def __add_message_to_messages_field(self, m_type, message):
-        print("add message started")
         tag_name = ''
 
         if m_type == 'You':

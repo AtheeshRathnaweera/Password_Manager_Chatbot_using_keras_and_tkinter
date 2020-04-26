@@ -1,2 +1,3 @@
 *.pkl
-generated/
+*.npy
+generated/saved_model/
