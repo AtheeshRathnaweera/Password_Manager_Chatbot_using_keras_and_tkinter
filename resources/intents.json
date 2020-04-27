@@ -5,70 +5,153 @@
       "patterns": ["Hi there!","Whats up","Hello","Hey","Is anyone there?"],
       "responses": ["Hi there, how can i help you?","Hey good to see you again @name !","Hello @name !"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "feelingnow",
       "patterns": ["How are you?","How are you doing?","How is it going?"],
       "responses": ["I am fine. Not bad. What about you ?","Not bad. What about you ?","Not much. Just chilling! What about you ?"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "feelingyou",
       "patterns": ["I am fine","Doing well","Not bad","Same here"],
       "responses": ["Good to here that !","Happy to hear that !","Cool !"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "my_name",
       "patterns": ["What is your name?","Do you have a name?","How should i call you?"],
       "responses": ["I am Elvy !","My name is Elvy !","You can call me Elvy !"],
       "context": "get_user_name",
-      "Entity": ""
+      "context_type": "optional",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "get_user_name",
       "patterns": [],
       "responses": ["What is your name ?","What about you ?","How should i call you ?"],
       "context": "received_user_name",
-      "Entity": "name"
+      "context_type": "optional",
+      "entity": "user_name",
+      "entity_title": "user_data"
     },
     {
       "tag": "received_user_name",
       "patterns": [],
       "responses": ["Nice to meet you @name !","Very happy to mee you @name !"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "nice_to_meet",
       "patterns": ["Nice to meet you too!","Happy to meet you too !"],
       "responses": ["It is a pleasure. How can i help you ?"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "goodbye",
       "patterns": ["Bye","See you later","Nice to chatting to you, Bye","Have to go!","cu later","Good bye"],
       "responses": ["Bye! Have a nice day.","See you soon ! Bye."],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "whatcando",
       "patterns": ["What can you do?","What are you?","Why are you here ?","Tell me about yourself !"],
       "responses": ["I am Elvy! I am here for help you! I can remember your passwords !"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     },
     {
       "tag": "thankyou",
       "patterns": ["Thanks","Thank you!","Thanks for helping me!"],
       "responses": ["Any time","You are welcome!","Happy to help you!"],
       "context": "",
-      "Entity": ""
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
+    },
+    {
+      "tag": "pw_save_request",
+      "patterns": ["Can you save this password ?","Remember this password !","Please remember my password", "Save my password !"],
+      "responses": ["Sure !"],
+      "context": "get_pw_name_for_save",
+      "context_type": "compulsory",
+      "entity": "",
+      "entity_title": ""
+    },
+    {
+      "tag": "get_pw_name_for_save",
+      "patterns": [""],
+      "responses": ["What is the name of your password ?","Can you please tell me the name of the password ?"],
+      "context": "received_pw_name_for_save",
+      "context_type": "compulsory",
+      "entity": "pw_name",
+      "entity_title": "passwords"
+    },
+    {
+      "tag": "received_pw_name_for_save",
+      "patterns": [""],
+      "responses": ["Tell me the password !", "Please tell me the password ?"],
+      "context": "received_pw_value_for_save",
+      "context_type": "compulsory",
+      "entity": "pw_value",
+      "entity_title": "passwords"
+    },
+    {
+      "tag": "received_pw_value_for_save",
+      "patterns": [""],
+      "responses": ["Your password saved successfully !", "I remembered the password !", "Done, Your password in good hands !"],
+      "context": "",
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
+    },
+    {
+      "tag": "view_pw_request",
+      "patterns": ["Can you tell me the password ?","What is my password of","Find my password"],
+      "responses": ["Okay !"],
+      "context": "get_pw_name_for_view",
+      "context_type": "compulsory",
+      "entity": "",
+      "entity_title": ""
+    },
+    {
+      "tag": "get_pw_name_for_view",
+      "patterns": [""],
+      "responses": ["What is the name of your password ?","Can you please tell me the name of the password ?"],
+      "context": "show_found_pw",
+      "context_type": "compulsory",
+      "entity": "",
+      "entity_title": ""
+    },
+    {
+      "tag": "show_found_pw",
+      "patterns": [""],
+      "responses": ["Password Name : @password_name | value : @password_value"],
+      "context": "",
+      "context_type": "",
+      "entity": "",
+      "entity_title": ""
     }
   ]
 }

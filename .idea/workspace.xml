@@ -6,7 +6,8 @@
       <change beforePath="$PROJECT_DIR$/main/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/chatbot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/create_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/create_gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/prepocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/prepocessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/name_recognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/name_recognizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/intents.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/intents.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,56 +125,64 @@
       <option name="project" value="LOCAL" />
       <updated>1587897461251</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="entity getting and saving completed">
+      <created>1587928350345</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587928350345</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated" />
     <MESSAGE value="basic chatting completed" />
     <MESSAGE value="ignore file changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore file changed" />
+    <MESSAGE value="entity getting and saving completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="entity getting and saving completed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587924877814">
+    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587986584722">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587924877814" />
+    <state x="223" y="67" width="1089" height="705" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587986584722" />
     <state x="498" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587924647144">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1587924647144" />
-    <state x="424" y="7" key="CommitChangelistDialog2" timestamp="1587897460172">
+    <state x="424" y="7" key="CommitChangelistDialog2" timestamp="1587928349205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587897460172" />
-    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1587924874669">
+    <state x="424" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587928349205" />
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1587986582897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587924874669" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1587924711006">
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587986582897" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1587998685462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587924711006" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1587924711006">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587998685462" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1587998685462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587924711006" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1587924711006">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587998685462" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1587998685462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587924711006" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1587924711006">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587998685462" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1587998685462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587924711006" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587998685462" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1587812768399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587812768399" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587897469706">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587928373285">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587897469706" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587928373285" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587908912447">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

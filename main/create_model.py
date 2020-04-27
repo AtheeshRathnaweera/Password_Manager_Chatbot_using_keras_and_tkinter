@@ -42,7 +42,7 @@ class create_model:
 
             if intent['Entity'] != "":
                 print("found an entity ", intent['Entity'])
-                self.entities.append(np.array([intent['Entity'], '']))
+                self.entities.append(np.array([intent['Entity'], ''], dtype='object'))
 
         stemmed_words_library = []
         for word in self.words_library:
@@ -55,7 +55,7 @@ class create_model:
         self.words_library = sorted(list(set(self.words_library)))
         self.tags = sorted(self.tags)
         print("stemmed words library amount : ", len(self.words_library))
-        self.entities = np.array(self.entities)
+        self.entities = np.asarray(self.entities, dtype='object')
 
         path = os.getcwd()[:-4] + "generated"
 
@@ -133,6 +133,3 @@ class create_model:
         hist = model.fit(training_x, training_y, epochs=200, batch_size=5, verbose=1)
         # model.save(os.getcwd()[:-4] + "generated" + '\chatbot_model.h5', hist)
         model.save(os.getcwd()[:-4] + "generated/" + 'saved_model/')
-
-
-create_model()

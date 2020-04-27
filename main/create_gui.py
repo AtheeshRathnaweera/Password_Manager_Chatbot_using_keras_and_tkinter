@@ -7,13 +7,13 @@ import chatbot as cb
 
 class create_gui:
     chatbot_name = "Elvy"
-    words_dictionary = None
     window = Tk()
+    chatbot_inst = None
     messages = None
 
     def __init__(self):
         print("create gui started.")
-        self.words_dictionary = pp.Preprocessor.get_the_words_dictionary()  # load the essentials
+        self.chatbot_inst = cb.ChatBot()
         self.__create()
 
     def __add_message_to_messages_field(self, m_type, message):
@@ -51,14 +51,15 @@ class create_gui:
 
     def __get_the_bot_response(self, user_sentence):
         # get the encoded list from the user input
-        processed_result = pp.Preprocessor.processing(self.words_dictionary, user_sentence)
-        return cb.ChatBot.get_the_response(self.class_names, self.intents, self.model, processed_result)
+        return self.chatbot_inst.get_the_response(user_sentence)
 
     def __create(self):
         # window attributes
         self.window.geometry("500x650")
         self.window.title(self.chatbot_name)
         # window attributes
+
+        self.window.eval('tk::PlaceWindow . center')
 
         # messages textbox for display the conversation
         self.messages = Text(self.window, height=38)
