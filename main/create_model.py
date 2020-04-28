@@ -25,7 +25,7 @@ class create_model:
         self.modelCreation()
 
     def __create_the_entities_list(self, entity_title):
-        temp = np.array([entity_title, []])
+        temp = np.array([entity_title, []], dtype='object')
         exist = any(np.array_equal(temp, x) for x in self.entities)
 
         if not exist:
@@ -49,10 +49,12 @@ class create_model:
                 self.doc_x.append(words_in_pattern)
                 self.doc_y.append(tag_name)
 
-            if intent['context_type'] == 'optional':
-                optional_contexts.append(intent['context'])
-            elif intent['context_type'] == 'compulsory':
-                compulsory_contexts.append(intent['context'])
+            if intent['context_group_type'] == 'optional':
+                if intent['context_group'] not in optional_contexts:
+                    optional_contexts.append(intent['context_group'])
+            elif intent['context_group_type'] == 'compulsory':
+                if intent['context_group'] not in compulsory_contexts:
+                    compulsory_contexts.append(intent['context_group'])
 
             if intent['entity_title'] != '':
                 self.__create_the_entities_list(intent['entity_title'])
@@ -74,6 +76,8 @@ class create_model:
 
         self.entities = np.asarray(self.entities, dtype='object')
         contexts_list = np.asarray(contexts_list, dtype='object')
+
+        print("contexts list : ", contexts_list)
 
         path = os.getcwd()[:-4] + "generated"
 

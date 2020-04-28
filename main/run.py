@@ -3,8 +3,8 @@ import create_model
 import numpy as np
 
 
-# create_gui.create_gui()
-create_model.create_model()
+create_gui.create_gui()
+# create_model.create_model()
 # test_entity_list = []
 # # np.array(['comp', '12345'], dtype='object')
 #

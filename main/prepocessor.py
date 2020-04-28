@@ -21,6 +21,19 @@ class Preprocessor:
         return pickle.load(open(os.getcwd()[:-4] + "generated" + '\entities.pkl', 'rb'))
 
     @staticmethod
+    def get_the_contexts():
+        return pickle.load(open(os.getcwd()[:-4] + "generated" + '\contexts.pkl', 'rb'))
+
+    @staticmethod
+    def update_optional_contexts(new_optional_context_list, new_compulsory_context_list):
+        contexts_list = [np.array(['optional', new_optional_context_list], dtype='object'),
+                         np.array(['compulsory', new_compulsory_context_list], dtype='object')]
+
+        path = os.getcwd()[:-4] + "generated"
+        with open(path + "\contexts.pkl", 'wb') as f:
+            pickle.dump(contexts_list, f)
+
+    @staticmethod
     def get_the_intents():
         intent_file = open(os.getcwd()[:-4]+"/resources/intents.json").read()
         return json.loads(intent_file)

@@ -7,7 +7,7 @@ nltk.download('words')
 
 class NameRecognizer:
     error_names = ['Me']
-    tagset = ['NNP', 'FW', 'NN']  # tag set that can possibly identify names in priority order
+    tagset = ['NNP', 'FW', 'NN', 'JJ']  # tag set that can possibly identify names in priority order
 
     def recognizer(self, sentence):
         tokens = nltk.tokenize.word_tokenize(sentence.title())
@@ -24,6 +24,7 @@ class NameRecognizer:
     def __find_the_name(self, pos, tag_name):
         person_name = ''
         for item in pos:
+            print(item)
             print(item[1])
             print(type(item))
             if item[1] == tag_name:
