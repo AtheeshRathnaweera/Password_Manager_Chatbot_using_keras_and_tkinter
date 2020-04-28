@@ -101,7 +101,7 @@
     },
     {
       "tag": "get_pw_name_for_save",
-      "patterns": [""],
+      "patterns": [],
       "responses": ["What is the name of your password ?","Can you please tell me the name of the password ?"],
       "context": "received_pw_name_for_save",
       "context_type": "compulsory",
@@ -110,7 +110,7 @@
     },
     {
       "tag": "received_pw_name_for_save",
-      "patterns": [""],
+      "patterns": [],
       "responses": ["Tell me the password !", "Please tell me the password ?"],
       "context": "received_pw_value_for_save",
       "context_type": "compulsory",
@@ -119,7 +119,7 @@
     },
     {
       "tag": "received_pw_value_for_save",
-      "patterns": [""],
+      "patterns": [],
       "responses": ["Your password saved successfully !", "I remembered the password !", "Done, Your password in good hands !"],
       "context": "",
       "context_type": "",
@@ -137,7 +137,7 @@
     },
     {
       "tag": "get_pw_name_for_view",
-      "patterns": [""],
+      "patterns": [],
       "responses": ["What is the name of your password ?","Can you please tell me the name of the password ?"],
       "context": "show_found_pw",
       "context_type": "compulsory",
@@ -146,7 +146,7 @@
     },
     {
       "tag": "show_found_pw",
-      "patterns": [""],
+      "patterns": [],
       "responses": ["Password Name : @password_name | value : @password_value"],
       "context": "",
       "context_type": "",

@@ -13,7 +13,6 @@ import os
 class create_model:
     words_library = []
     tags = []
-    # responses = []
     entities = []
     ignore_words = ["?", "!", ","]
 
@@ -25,9 +24,19 @@ class create_model:
         self.__preProcessTestAndTrainData()
         self.modelCreation()
 
+    def __create_the_entities_list(self, entity_title):
+        temp = np.array([entity_title, []])
+        exist = any(np.array_equal(temp, x) for x in self.entities)
+
+        if not exist:
+            self.entities.append(temp)
+
     def __readTheIntents(self):
-        intent_file = open("../resources/intents.json").read()
+        intent_file = open(os.getcwd()[:-4]+'resources/intents.json').read()
         intents_json = json.loads(intent_file)
+
+        optional_contexts = []
+        compulsory_contexts = []
 
         for intent in intents_json['intents']:
             tag_name = intent['tag']
@@ -40,9 +49,13 @@ class create_model:
                 self.doc_x.append(words_in_pattern)
                 self.doc_y.append(tag_name)
 
-            if intent['Entity'] != "":
-                print("found an entity ", intent['Entity'])
-                self.entities.append(np.array([intent['Entity'], ''], dtype='object'))
+            if intent['context_type'] == 'optional':
+                optional_contexts.append(intent['context'])
+            elif intent['context_type'] == 'compulsory':
+                compulsory_contexts.append(intent['context'])
+
+            if intent['entity_title'] != '':
+                self.__create_the_entities_list(intent['entity_title'])
 
         stemmed_words_library = []
         for word in self.words_library:
@@ -55,7 +68,12 @@ class create_model:
         self.words_library = sorted(list(set(self.words_library)))
         self.tags = sorted(self.tags)
         print("stemmed words library amount : ", len(self.words_library))
+
+        contexts_list = [np.array(['optional', optional_contexts], dtype='object'),
+                         np.array(['compulsory', compulsory_contexts], dtype='object')]
+
         self.entities = np.asarray(self.entities, dtype='object')
+        contexts_list = np.asarray(contexts_list, dtype='object')
 
         path = os.getcwd()[:-4] + "generated"
 
@@ -67,6 +85,9 @@ class create_model:
 
         with open(path + "\entities.pkl", 'wb') as f:
             pickle.dump(self.entities, f)
+
+        with open(path + "\contexts.pkl", 'wb') as f:
+            pickle.dump(contexts_list, f)
 
     # def __save_the_response_to_a_file(self, json_intents, path):
     #     temp_responses = [None] * len(self.tags)  # list of numpy arrays
@@ -111,7 +132,6 @@ class create_model:
         self.doc_y = processed_y
 
     def modelCreation(self):
-
         training_x = np.array(self.doc_x)
         training_y = np.array(self.doc_y)
 
